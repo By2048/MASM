@@ -1,0 +1,22 @@
+data segment
+	dd	20034980h
+	dd	1008e699h
+	dd	?
+data ends
+code segment
+	assume cs:code,ds:data
+start:
+	mov ax,data
+	mov ds,ax
+	mov ax,ds:[0]
+	mov dx,ds:[2]
+	mov bx,ds:[4]
+	mov cx,ds:[6]
+	add ax,bx
+	adc dx,cx
+	mov ds:[8],ax
+	mov ds:[10],dx
+	mov ah,4ch
+	int 21h
+code ends
+	end start
