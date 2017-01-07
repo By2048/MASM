@@ -1,16 +1,16 @@
 ; List Add
 data segment
-    list dw 1,1,2,2,3,3,4,4,5,5    
-    sum dw ?
+    list    dw 1,1,2,2,3,3,4,4,5,5    
+    sum     dw ?
 data ends
 code segment
     assume cs:code,ds:data
 start:
     mov ax,data
     mov ds,ax
-    mov cx,10 	 ; Ñ­»·´ÎÊı
-    lea bx,list  ; »ñÈ¡listµÄÆ«ÒÆµØÖ·
-    mov ax,0  	 ; ÀÛ¼ÓºÍ
+    mov cx,10 	 ; å¾ªç¯æ¬¡æ•°
+    lea bx,list  ; è·å–listçš„åç§»åœ°å€
+    mov ax,0  	 ; ç´¯åŠ å’Œ
 lop:
     add ax,ds[bx]  ; ax=ax+list[i]
     add bx,2      
